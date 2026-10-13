@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="board-panel">
+        <canvas id="board" width="300" height="600" aria-label="Tetris game board"></canvas>
+        <section class="game-overlay" id="game-overlay" aria-labelledby="overlay-title">
+          <div class="overlay-card">
+            <p class="eyebrow">KLASSISCHES ARCADE-SPIEL</p>
+            <h2 id="overlay-title">TETRIS</h2>
+            <div id="home-menu">
+              <p>Fülle Reihen und knacke deinen Highscore.</p>
+              <p class="menu-highscore">Highscore <strong id="menu-high-score">0</strong></p>
+              <button class="overlay-primary" id="menu-start-btn" type="button">Spiel starten</button>
+            </div>
+            <div id="game-over-menu" hidden>
+              <p>Dein Score: <strong id="final-score">0</strong></p>
+              <button class="overlay-primary" id="menu-restart-btn" type="button">Nochmal spielen</button>
+              <button class="overlay-secondary" id="menu-home-btn" type="button">Hauptmenü</button>
+            </div>
+            <p class="storage-status" id="storage-status" role="status"></p>
+            <p class="menu-controls">← → bewegen <span>↑ drehen</span><br />↓ schneller <span>Leertaste: Drop</span><br />C halten <span>P Pause</span></p>
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="panel title-panel">
+          <h1>TETRIS</h1>
+          <p id="status-text">Bereit</p>
+        </div>
+
+        <div class="panel stats-panel">
+          <div class="stat-row">
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>Highscore</span>
+            <strong id="high-score">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>Lines</span>
+            <strong id="lines">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>Level</span>
+            <strong id="level">1</strong>
+          </div>
+        </div>
+
+        <div class="panel preview-panel">
+          <h2>Next</h2>
+          <canvas id="next" width="120" height="120" aria-label="Next piece preview"></canvas>
+        </div>
+
+        <div class="panel preview-panel">
+          <h2>Hold</h2>
+          <canvas id="hold" width="120" height="120" aria-label="Hold piece preview"></canvas>
+        </div>
+
+        <div class="controls">
+          <button id="start-btn" type="button">Neustart</button>
+          <button id="pause-btn" type="button">Pause</button>
+          <button id="reset-btn" type="button">Reset</button>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
